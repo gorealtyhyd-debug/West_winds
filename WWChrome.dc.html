@@ -1,0 +1,138 @@
+<helmet><style>@font-face{font-family:'WWNum';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2) format('woff2');unicode-range:U+0030-0039,U+20B9,U+0025}
+</style></helmet>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s;display:flex;align-items:center;justify-content:space-between;gap:20px;height:84px;padding:0 clamp(16px,4vw,56px);background:{{ hdrBg }};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(44,46,37,.08)">
+  <a href="West%20Winds%20v2.dc.html" style="display:block;width:clamp(118px,14vw,190px);flex:none"><img src="{{ logoSrc }}" alt="West Winds by Creative Homes" style="display:block;width:100%"></a>
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <nav aria-label="Primary" style="display:flex;align-items:center;gap:clamp(14px,2vw,30px)">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+        <a href="{{ n.href }}" style="padding:6px 0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;color:{{ n.c }};border-bottom:1px solid {{ n.bd }}" style-hover="color:#2c2e25">{{ n.label }}</a>
+      </sc-for>
+    </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:10px;flex:none">
+    <button onClick="{{ openEnq }}" style="height:clamp(42px,4vw,50px);padding:0 clamp(16px,2vw,28px);border:none;border-radius:999px;background:#44463a;color:#fdfaf2;font-size:clamp(11px,1vw,13px);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;cursor:pointer" style-hover="background:#2c2e25">Enquire now</button>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:46px;height:46px;border-radius:50%;border:1px solid {{ tgBd }};background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer"><span style="width:18px;height:1.5px;background:{{ tgC }};transition:transform .4s;transform:{{ mmL1 }}"></span><span style="width:18px;height:1.5px;background:{{ tgC }};transition:transform .4s;transform:{{ mmL2 }}"></span></button>
+    </sc-if>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div data-mm="1" style="position:fixed;inset:0;z-index:58;background:#2c2e25;color:#fdfaf2;padding:100px clamp(20px,5vw,48px) 24px;display:flex;flex-direction:column;overflow:auto">
+    <div data-mm-i="1" style="display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#a3a490;padding-bottom:14px;border-bottom:1px solid rgba(253,250,242,.14)"><span>Menu</span><span>West Winds · Bhanur</span></div>
+    <nav aria-label="Mobile" style="display:grid;grid-template-columns:{{ mmCols }};column-gap:32px">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+        <a data-mm-i="1" href="{{ n.href }}" onClick="{{ n.go }}" style="display:grid;grid-template-columns:40px 1fr 20px;align-items:baseline;gap:10px;padding:clamp(14px,2.4vh,20px) 0;border-bottom:1px solid rgba(253,250,242,.1);color:#fdfaf2" style-hover="color:#dcd5bf">
+          <span style="font-size:11px;letter-spacing:.2em;color:#8a8b78">{{ n.num }}</span>
+          <span style="font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(30px,6vw,44px);line-height:1">{{ n.label }}</span>
+          <span style="font-size:16px;color:#8a8b78">→</span>
+        </a>
+      </sc-for>
+    </nav>
+    <div data-mm-i="1" style="margin-top:auto;padding-top:28px;display:grid;grid-template-columns:{{ mmCols }};gap:12px;align-items:stretch">
+      <div style="padding:18px 20px;background:#44463a;display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#dcd5bf">Villas starting at</span>
+        <span style="font-family:'WWNum','Cormorant Garamond',serif;font-size:32px;line-height:1">₹2.10 Cr <span style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#dcd5bf">ONWARDS</span></span>
+        <span style="font-size:12px;color:rgba(253,250,242,.7)">3 &amp; 4 BHK + Media · HMDA &amp; RERA</span>
+      </div>
+      <button onClick="{{ openEnq }}" style="min-height:56px;border-radius:999px;border:none;background:#fdfaf2;color:#2c2e25;font-size:13px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;align-self:center;width:100%">Enquire now</button>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ enqOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeEnq }}" style="position:fixed;inset:0;z-index:95;background:rgba(30,31,25,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)"></div>
+  <div style="position:fixed;inset:0;z-index:96;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none">
+    <div role="dialog" aria-modal="true" aria-label="Enquire about West Winds" style="pointer-events:auto;position:relative;width:min(900px,100%);max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:{{ enqCols }};background:#fdfaf2;box-shadow:0 50px 100px -30px rgba(0,0,0,.55)">
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative;min-height:520px;overflow:hidden">
+          <img src="img/w/villa-facade.jpg" alt="West Winds triplex villa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,31,25,.85),rgba(30,31,25,.1) 60%)"></div>
+          <div style="position:absolute;left:28px;top:28px"><img src="img/logo-westwinds.png" alt="West Winds" style="width:180px"></div>
+          <div style="position:absolute;left:28px;right:28px;bottom:28px;color:#fdfaf2;display:flex;flex-direction:column;gap:14px">
+            <div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:34px;line-height:1.05">Villas starting at <em style="font-style:italic">₹2.10 Cr</em></div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:rgba(253,250,242,.88)"><span>3 &amp; 4 BHK + Media · G+2 triplex</span><span>170 – 300 sq.yds · East &amp; West</span><span>HMDA &amp; RERA · Possession Dec 2026</span></div>
+          </div>
+        </div>
+      </sc-if>
+      <div style="padding:clamp(26px,3.4vw,44px);display:flex;flex-direction:column;justify-content:center">
+        <button onClick="{{ closeEnq }}" aria-label="Close" style="position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid #d9d2bf;background:#fdfaf2;color:#2c2e25;font-size:20px;line-height:1;cursor:pointer" style-hover="background:#44463a;color:#fdfaf2">×</button>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="width:52px;height:52px;border-radius:50%;background:#44463a;color:#fdfaf2;display:flex;align-items:center;justify-content:center;font-size:22px">✓</div>
+            <div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:36px;line-height:1.1;color:#2c2e25">Thank you, {{ firstName }}.</div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#55574a">Our relationship manager will reach you shortly with the price sheet and floor plans.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:12px">
+            <div style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#6d6e5e">Enquire now</div>
+            <div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(30px,3vw,40px);line-height:1.05;color:#2c2e25;margin-bottom:6px">Get price sheet &amp; <em style="font-style:italic">floor plans</em></div>
+            <input value="{{ form.name }}" onChange="{{ setName }}" placeholder="Full name" style="height:52px;padding:0 18px;border:1px solid #d9d2bf;background:#fff;font-size:15px;color:#2c2e25;outline:none">
+            <div style="display:flex;height:52px;border:1px solid #d9d2bf;background:#fff"><span style="display:flex;align-items:center;padding:0 14px;font-size:15px;color:#55574a;border-right:1px solid #e3dccb">+91</span><input value="{{ form.phone }}" onChange="{{ setPhone }}" inputMode="numeric" placeholder="Mobile number" style="flex:1;min-width:0;border:none;padding:0 16px;background:transparent;font-size:15px;color:#2c2e25;outline:none"></div>
+            <input value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="Email (optional)" style="height:52px;padding:0 18px;border:1px solid #d9d2bf;background:#fff;font-size:15px;color:#2c2e25;outline:none">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
+              <sc-for list="{{ prefs }}" as="p" hint-placeholder-count="3"><button type="button" onClick="{{ p.pick }}" style="height:38px;padding:0 16px;border-radius:999px;border:1px solid {{ p.bd }};background:{{ p.bg }};color:{{ p.fg }};font-size:13px;white-space:nowrap;cursor:pointer">{{ p.label }}</button></sc-for>
+            </div>
+            <sc-if value="{{ err }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#a8432a">{{ err }}</div></sc-if>
+            <button type="submit" style="margin-top:8px;height:56px;border-radius:999px;border:none;background:#44463a;color:#fdfaf2;font-size:13px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer" style-hover="background:#2c2e25">Submit enquiry</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;amenities&quot;,&quot;plans&quot;,&quot;price&quot;,&quot;location&quot;,&quot;faq&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: false, menuOpen: false, enqOpen: false, sent: false, err: '', form: { name: '', phone: '', email: '', pref: '' } };
+  componentDidMount() {
+    this.onResize = () => this.setState({ narrow: window.innerWidth < 1080, vw: window.innerWidth });
+    this.onResize(); window.addEventListener('resize', this.onResize);
+    this.onEnq = () => this.setState({ enqOpen: true, menuOpen: false });
+    window.addEventListener('ww-enquire', this.onEnq);
+    this.onKey = e => e.key === 'Escape' && this.setState({ enqOpen: false, menuOpen: false });
+    window.addEventListener('keydown', this.onKey);
+    this.revT = setTimeout(() => this.reveal(), 60);
+  }
+  reveal() {
+    document.querySelectorAll('[data-hero-img]').forEach(el => requestAnimationFrame(() => { el.style.transform = 'scale(1)'; }));
+    const els = [...document.querySelectorAll('[data-rv]')];
+    els.forEach(el => { if (el.dataset.rvd) return; el.dataset.rvd = 1; el.style.opacity = 0; el.style.transform = 'translateY(28px)'; el.style.transition = 'opacity 1s ease, transform 1.1s cubic-bezier(.2,.7,.2,1)'; });
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; this.io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => this.io.observe(el));
+    if (!this.mo) { this.mo = new MutationObserver(() => { clearTimeout(this.moT); this.moT = setTimeout(() => this.reveal(), 80); }); this.mo.observe(document.body, { childList: true, subtree: true }); }
+  }
+  componentWillUnmount() { clearTimeout(this.revT); this.io && this.io.disconnect(); this.mo && this.mo.disconnect(); window.removeEventListener('resize', this.onResize); window.removeEventListener('ww-enquire', this.onEnq); window.removeEventListener('keydown', this.onKey); }
+  setForm(k, v) { this.setState(s => ({ form: { ...s.form, [k]: v }, err: '' })); }
+  renderVals() {
+    const st = this.state, active = this.props.active || '';
+    const nav = [['Home', 'West%20Winds%20v2.dc.html', 'home'], ['Amenities', 'Amenities.dc.html', 'amenities'], ['Floor plans', 'Floor-Plans.dc.html', 'plans'], ['Price', 'Price.dc.html', 'price'], ['Location', 'Location.dc.html', 'location'], ['FAQs', 'FAQ.dc.html', 'faq']]
+      .map(([label, href, k], i) => ({ label, href, num: String(i + 1).padStart(2, '0'), go: () => this.setState({ menuOpen: false }), c: k === active ? '#2c2e25' : '#6d6e5e', bd: k === active ? '#2c2e25' : 'transparent' }));
+    return {
+      mmCols: (st.vw >= 700) ? '1fr 1fr' : '1fr', mmL1: st.menuOpen ? 'translateY(3.25px) rotate(45deg)' : 'none', mmL2: st.menuOpen ? 'translateY(-3.25px) rotate(-45deg)' : 'none',
+      hdrBg: st.menuOpen ? '#2c2e25' : 'rgba(253,250,242,.97)', logoSrc: st.menuOpen ? 'img/logo-westwinds.png' : 'img/logo-westwinds-dark.png', tgBd: st.menuOpen ? 'rgba(253,250,242,.4)' : 'rgba(44,46,37,.25)', tgC: st.menuOpen ? '#fdfaf2' : '#2c2e25',
+      nav, wide: !st.narrow, narrow: st.narrow, menuOpen: st.menuOpen, enqOpen: st.enqOpen, enqCols: st.narrow ? '1fr' : 'minmax(0,.9fr) minmax(0,1.1fr)',
+      openEnq: () => this.setState({ enqOpen: true, menuOpen: false }), closeEnq: () => this.setState({ enqOpen: false }), toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      sent: st.sent, notSent: !st.sent, err: st.err, form: st.form, firstName: (st.form.name || '').trim().split(' ')[0] || 'there',
+      setName: e => this.setForm('name', e.target.value), setPhone: e => this.setForm('phone', e.target.value.replace(/[^0-9]/g, '').slice(0, 10)), setEmail: e => this.setForm('email', e.target.value),
+      prefs: ['3 BHK + Media', '4 BHK + Media', 'Site visit'].map(label => { const on = st.form.pref === label; return { label, bg: on ? '#2c2e25' : 'transparent', fg: on ? '#fdfaf2' : '#2c2e25', bd: on ? '#2c2e25' : '#d9d2bf', pick: () => this.setForm('pref', on ? '' : label) }; }),
+      submit: e => { e.preventDefault(); const f = st.form;
+        if (f.name.trim().length < 2) return this.setState({ err: 'Please enter your name.' });
+        if (f.phone.length !== 10) return this.setState({ err: 'Please enter a valid 10-digit mobile number.' });
+        this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

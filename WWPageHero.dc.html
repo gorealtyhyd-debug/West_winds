@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section style="position:relative;height:clamp(460px,74vh,780px);overflow:hidden;background:#2c2e25;color:#fdfaf2">
+  <img data-hero-img="1" src="{{ img }}" alt="{{ alt }}" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ pos }};transform:scale(1.08);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)">
+  <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,31,25,.88) 0%,rgba(30,31,25,.35) 55%,rgba(30,31,25,.15) 100%)"></div>
+  <div style="position:absolute;left:clamp(20px,5vw,72px);right:clamp(20px,5vw,72px);bottom:clamp(30px,5vw,64px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap">
+    <div data-rv="1" style="display:flex;flex-direction:column;gap:18px;max-width:980px">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#dcd5bf"><a href="West%20Winds%20v2.dc.html" style="color:#dcd5bf">West Winds</a><span style="width:24px;height:1px;background:#dcd5bf"></span><span style="color:#fdfaf2">{{ crumb }}</span></nav>
+      <h1 style="margin:0;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(46px,6.4vw,104px);line-height:.96;text-wrap:balance">{{ title }} <em style="font-style:italic">{{ italic }}</em></h1>
+      <p style="margin:0;max-width:680px;font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:rgba(253,250,242,.88)">{{ intro }}</p>
+    </div>
+    <div data-rv="1" style="display:flex;gap:1px;background:rgba(253,250,242,.2);border:1px solid rgba(253,250,242,.2)">
+      <div style="padding:16px 22px;background:rgba(30,31,25,.55);backdrop-filter:blur(8px)"><div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:30px;line-height:1">136</div><div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#dcd5bf;margin-top:6px">Villas</div></div>
+      <div style="padding:16px 22px;background:rgba(30,31,25,.55);backdrop-filter:blur(8px)"><div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:30px;line-height:1">10</div><div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#dcd5bf;margin-top:6px">Acres</div></div>
+      <div style="padding:16px 22px;background:rgba(30,31,25,.55);backdrop-filter:blur(8px)"><div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:30px;line-height:1">₹2.10 Cr</div><div style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#dcd5bf;margin-top:6px">Onwards</div></div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;img&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;img/w/gateway.jpg&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;alt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;West Winds&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pos&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;center&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;crumb&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Page&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Title&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;italic&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;intro&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}"></script>
+</body>
+</html>

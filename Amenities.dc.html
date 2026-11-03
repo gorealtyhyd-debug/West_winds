@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Amenities at West Winds Bhanur | Clubhouse, Pool & 25+ Amenities | Creative Homes</title>
+<meta name="description" content="Explore 25+ amenities at West Winds villas, Bhanur — clubhouse with indoor games, swimming pool, gym, banquet hall, open-air theatre, central park, pickleball, basketball and more.">
+<link rel="canonical" href="Amenities.dc.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"West Winds","item":"West%20Winds%20v2.dc.html"},{"@type":"ListItem","position":2,"name":"Amenities"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What amenities does West Winds offer?","acceptedAnswer":{"@type":"Answer","text":"West Winds offers a clubhouse with indoor games, swimming pool, gym, library, crèche, cafeteria, co-work space, banquet hall, suite rooms, gazebos, BBQ corners, party lawn, central park, open-air theatre, jogging track, wellness park, kids' play area, basketball court, cricket net, pickleball, indoor badminton, skating rink, STP & WTP and 100% DG backup."}},{"@type":"Question","name":"Does West Winds have a clubhouse?","acceptedAnswer":{"@type":"Answer","text":"Yes. The clubhouse includes indoor games, a library, crèche, cafeteria, co-work space, banquet hall, suite rooms, swimming pool and gym."}},{"@type":"Question","name":"Is there power backup at West Winds?","acceptedAnswer":{"@type":"Answer","text":"Yes, West Winds provides 100% DG power backup along with STP and WTP."}}]}]}</script>
+<style>@font-face{font-family:'WWNum';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2) format('woff2');unicode-range:U+0030-0039,U+20B9,U+0025}
+html,body{margin:0;background:#fdfaf2;color:#2c2e25;font-family:'Jost',system-ui,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}button,input,select,textarea{font-family:inherit}a{color:#44463a;text-decoration:none}a:hover{color:#2c2e25}summary::-webkit-details-marker{display:none}</style>
+</helmet>
+<div style="background:#fdfaf2">
+<dc-import name="WWChrome" active="amenities" hint-size="100%,84px"></dc-import>
+<main style="padding-top:84px">
+<dc-import name="WWPageHero" img="img/w/pool.jpg" alt="Swimming pool at West Winds clubhouse, Bhanur" pos="center" crumb="Amenities" title="Amenities at" italic="West Winds, Bhanur" intro="25+ lifestyle amenities across a full clubhouse, central park and sports courts — all inside the 10-acre gated community." hint-size="100%,74vh"></dc-import>
+
+  <section style="padding:clamp(80px,10vw,130px) clamp(20px,5vw,72px)">
+    <div style="max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(60px,8vw,110px)">
+      <sc-for list="{{ zones }}" as="z" hint-placeholder-count="4">
+        <article data-rv="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,64px);align-items:center">
+          <div style="order:{{ z.order }};position:relative;aspect-ratio:4/3;overflow:hidden;background:#f2ede1">
+            <img loading="lazy" decoding="async" src="{{ z.img }}" alt="{{ z.alt }}" style="width:100%;height:100%;object-fit:cover">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <span style="font-size:12px;letter-spacing:.3em;color:#8a8b78">{{ z.n }}</span>
+            <h2 style="margin:0;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,3.8vw,58px);line-height:1">{{ z.t }}</h2>
+            <p style="margin:0;font-size:16px;line-height:1.75;color:#55574a">{{ z.d }}</p>
+            <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid #d9d2bf">
+              <sc-for list="{{ z.items }}" as="it" hint-placeholder-count="5"><li style="padding:13px 0;border-bottom:1px solid #e3dccb;font-size:15px">{{ it }}</li></sc-for>
+            </ul>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:clamp(80px,10vw,130px) clamp(20px,5vw,72px);background:#f2ede1">
+    <div style="max-width:1000px;margin:0 auto">
+      <h2 style="margin:0 0 30px;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4vw,60px);line-height:1">Amenity <em style="font-style:italic">questions</em></h2>
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="3">
+        <details style="border-top:1px solid #2c2e25;padding:22px 0">
+          <summary style="list-style:none;cursor:pointer;font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(22px,2vw,28px);display:flex;justify-content:space-between;gap:20px">{{ q.q }}<span style="font-family:'Jost',sans-serif;font-size:20px">+</span></summary>
+          <p style="margin:14px 0 0;font-size:15px;line-height:1.75;color:#55574a">{{ q.a }}</p>
+        </details>
+      </sc-for>
+    </div>
+  </section>
+</main>
+<dc-import name="WWRelated" current="amenities" hint-size="100%,520px"></dc-import>
+<dc-import name="WWFooter" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const z = [
+      ['Clubhouse', 'lobby.jpg', 'West Winds clubhouse lounge', 'A brick-and-glass clubhouse at the heart of the community — for work, play and family occasions.', ['Clubhouse with indoor games', 'Library', 'Crèche', 'Cafeteria', 'Co-work space', 'Banquet hall', 'Suite rooms']],
+      ['Pool & fitness', 'gym.jpg', 'Gymnasium at West Winds clubhouse', 'A resort-style pool deck and a fully equipped gymnasium, steps from every villa.', ['Swimming pool', 'Gymnasium', 'Pool deck']],
+      ['Parks & leisure', 'w/theatre.jpg', 'Open-air theatre at West Winds', 'Lawns, pavilions and an open-air theatre composed into one continuous landscape.', ['Central park', 'Party lawn', 'Gazebos', 'BBQ corners', 'Open-air theatre', 'Jogging track', 'Wellness park', 'Lush landscaping']],
+      ['Sports & play', 'w/kids-play.jpg', 'Kids play area at West Winds', 'Courts, nets and a skating rink for every age — with a dedicated kids’ play area.', ['Basketball court', 'Cricket net', 'Pickleball', 'Indoor badminton', 'Skating rink', 'Kids’ play area']],
+      ['Infrastructure', 'w/walkway.jpg', 'Landscaped walkways at West Winds', 'Quiet, reliable infrastructure across the community.', ['STP & WTP', '100% DG backup']]
+    ];
+    return {
+      zones: z.map(([t, img, alt, d, items], i) => ({ t, img: 'img/' + img, alt, d, items, n: String(i + 1).padStart(2, '0') + ' / ' + String(z.length).padStart(2, '0'), order: i % 2 ? 1 : 0 })),
+      faqs: [
+        { q: 'What amenities does West Winds offer?', a: 'A clubhouse with indoor games, swimming pool, gym, library, crèche, cafeteria, co-work space, banquet hall, suite rooms, gazebos, BBQ corners, party lawn, central park, open-air theatre, jogging track, wellness park, kids’ play area, basketball court, cricket net, pickleball, indoor badminton, skating rink, STP & WTP and 100% DG backup.' },
+        { q: 'Does West Winds have a clubhouse?', a: 'Yes. The clubhouse includes indoor games, a library, crèche, cafeteria, co-work space, banquet hall, suite rooms, swimming pool and gym.' },
+        { q: 'Is there power backup at West Winds?', a: 'Yes, West Winds provides 100% DG power backup along with STP and WTP.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>West Winds Floor Plans | 3 & 4 BHK Triplex Villa Plans 170–300 Sq.Yds | Bhanur</title>
+<meta name="description" content="View all 17 West Winds villa floor plans — 3 BHK and 4 BHK + Media room G+2 triplex villas on 170, 208, 224, 256, 262, 263, 266 and 300 sq.yd plots, East and West facing.">
+<link rel="canonical" href="Floor-Plans.dc.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"West Winds","item":"West%20Winds%20v2.dc.html"},{"@type":"ListItem","position":2,"name":"Floor plans"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What plot sizes are available at West Winds?","acceptedAnswer":{"@type":"Answer","text":"Plots of 170, 208, 224, 256, 262, 263, 266 and 300 sq.yds, with 17 layouts in East and West facings."}},{"@type":"Question","name":"What is the built-up area of West Winds villas?","acceptedAnswer":{"@type":"Answer","text":"Built-up areas range from 2,550 to 4,500 sq.ft across ground plus two floors."}},{"@type":"Question","name":"Can I customise the floor plan?","acceptedAnswer":{"@type":"Answer","text":"Yes, free floor-plan customisation is offered on every West Winds villa."}}]}]}</script>
+<style>@font-face{font-family:'WWNum';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2) format('woff2');unicode-range:U+0030-0039,U+20B9,U+0025}
+html,body{margin:0;background:#fdfaf2;color:#2c2e25;font-family:'Jost',system-ui,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}button,input,select,textarea{font-family:inherit}a{color:#44463a;text-decoration:none}a:hover{color:#2c2e25}summary::-webkit-details-marker{display:none}</style>
+</helmet>
+<div style="background:#fdfaf2">
+<dc-import name="WWChrome" active="plans" hint-size="100%,84px"></dc-import>
+<main style="padding-top:84px">
+<dc-import name="WWPageHero" img="img/street-2.jpg" alt="Row of West Winds triplex villas" pos="center 40%" crumb="Floor plans" title="West Winds" italic="floor plans" intro="17 layouts of G+2 triplex villas — 3 BHK and 4 BHK + Media room — on 170 to 300 sq.yd plots with 2,550 to 4,500 sq.ft built up. Every plan can be customised free of cost." hint-size="100%,74vh"></dc-import>
+
+  <section style="padding:0 clamp(20px,5vw,72px) clamp(80px,10vw,130px)">
+    <div style="max-width:1440px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));border-top:1px solid #2c2e25;border-bottom:1px solid #d9d2bf">
+        <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="8">
+          <button onClick="{{ z.pick }}" style="padding:22px 6px;border:none;background:{{ z.bg }};color:{{ z.fg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <span style="font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(30px,3vw,44px);line-height:1">{{ z.v }}</span>
+            <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7;white-space:nowrap">sq.yds</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:22px 0">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ variants }}" as="p" hint-placeholder-count="2">
+            <button onClick="{{ p.pick }}" style="height:44px;padding:0 18px;border-radius:999px;border:1px solid {{ p.bd }};background:{{ p.bg }};color:{{ p.fg }};font-size:13px;white-space:nowrap;cursor:pointer">{{ p.facing }} facing · {{ p.dims }}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{ openEnq }}" style="height:48px;padding:0 26px;border-radius:999px;border:none;background:#44463a;color:#fdfaf2;font-size:12px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer" style-hover="background:#2c2e25">Get dimensioned plans</button>
+      </div>
+      <h2 style="margin:0 0 18px;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,2.6vw,40px)">{{ plan.facing }} facing villa · {{ plan.size }} sq.yds · {{ plan.dims }}</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+        <sc-for list="{{ floors }}" as="f" hint-placeholder-count="3">
+          <figure data-rv="1" style="margin:0;padding:16px;background:#f2ede1;display:flex;flex-direction:column;gap:14px">
+            <a href="{{ f.src }}" target="_blank" style="display:flex;align-items:center;justify-content:center;height:clamp(320px,34vw,500px);background:#fff;padding:12px"><img loading="lazy" decoding="async" src="{{ f.src }}" alt="{{ f.alt }}" style="max-width:100%;max-height:100%;object-fit:contain"></a>
+            <figcaption style="display:flex;justify-content:space-between;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase"><span>{{ f.label }}</span><span style="color:#6d6e5e;letter-spacing:.06em;text-transform:none">Open full size ↗</span></figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(70px,9vw,120px) clamp(20px,5vw,72px);background:#f2ede1">
+    <div style="max-width:1440px;margin:0 auto">
+      <h2 style="margin:0 0 26px;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,3.6vw,54px)">All 17 layouts</h2>
+      <div style="overflow:auto;background:#fdfaf2">
+        <table style="width:100%;min-width:620px;border-collapse:collapse;font-size:15px">
+          <thead><tr style="background:#44463a;color:#fdfaf2;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-align:left"><th style="padding:16px 20px;font-weight:400">Plot size</th><th style="padding:16px 20px;font-weight:400">Facing</th><th style="padding:16px 20px;font-weight:400">Dimensions</th><th style="padding:16px 20px;font-weight:400">Structure</th></tr></thead>
+          <tbody>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="10"><tr onClick="{{ r.pick }}" style="border-top:1px solid #e3dccb;cursor:pointer"><td style="padding:16px 20px;font-family:'WWNum','Cormorant Garamond',serif;font-size:24px">{{ r.size }} sq.yds</td><td style="padding:16px 20px">{{ r.facing }}</td><td style="padding:16px 20px;color:#55574a">{{ r.dims }}</td><td style="padding:16px 20px">G + 2 triplex</td></tr></sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:50px;max-width:1000px">
+        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="3">
+          <details style="border-top:1px solid #2c2e25;padding:22px 0">
+            <summary style="list-style:none;cursor:pointer;font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(22px,2vw,28px);display:flex;justify-content:space-between;gap:20px">{{ q.q }}<span style="font-family:'Jost',sans-serif;font-size:20px">+</span></summary>
+            <p style="margin:14px 0 0;font-size:15px;line-height:1.75;color:#55574a">{{ q.a }}</p>
+          </details>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</main>
+<dc-import name="WWRelated" current="plans" hint-size="100%,520px"></dc-import>
+<dc-import name="WWFooter" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FP = { f005:'f005_860x1309',f007:'f007_852x1353',f009:'f009_728x1186',f011:'f011_681x910',f013:'f013_894x1144',f015:'f015_682x911',f017:'f017_660x1141',f019:'f019_850x1366',f021:'f021_661x1127',f023:'f023_679x920',f025:'f025_873x1133',f027:'f027_679x909',f029:'f029_824x1101',f031:'f031_684x929',f033:'f033_681x912',f035:'f035_722x750',f037:'f037_843x914',f039:'f039_692x741',f041:'f041_674x923',f043:'f043_827x1099',f045:'f045_684x919',f047:'f047_827x845',f049:'f049_706x678',f051:'f051_706x679',f053:'f053_824x841',f055:'f055_714x677',f057:'f057_705x678',f059:'f059_742x770',f061:'f061_875x949',f063:'f063_748x770',f065:'f065_662x1057',f067:'f067_887x1329',f069:'f069_662x1057',f071:'f071_630x1081',f073:'f073_847x1347',f075:'f075_628x1080',f077:'f077_874x784',f079:'f079_720x573',f081:'f081_714x573',f083:'f083_704x554',f085:'f085_715x555',f087:'f087_868x760',f089:'f089_687x884',f091:'f091_945x1079',f093:'f093_680x870',f095:'f095_781x1594',f097:'f097_588x943',f099:'f099_588x937',f101:'f101_848x1130',f103:'f103_662x927',f105:'f105_661x915' };
+const fp = k => 'img/fp/' + FP[k] + '.jpg';
+const PLANS = [
+  ['East',170,"30' × 50'",'f007','f005','f009'],['East',170,"34' × 45'",'f013','f011','f015'],['West',170,"30' × 50'",'f019','f017','f021'],['West',170,"34' × 45'",'f025','f023','f027'],
+  ['East',208,"37'6\" × 50'",'f029','f031','f033'],['East',208,"41'7½\" × 45'",'f037','f035','f039'],['West',208,"37'6\" × 50'",'f043','f041','f045'],['West',208,"41'7½\" × 45'",'f061','f059','f063'],
+  ['East',224,"44'10\" × 45'",'f047','f049','f051'],['West',224,"44'10\" × 45'",'f053','f055','f057'],['West',256,"38'6\" × 57'6\"",'f067','f065','f069'],['East',256,"38'6\" × 60'",'f073','f071','f075'],
+  ['East',256,"51'3\" × 45'",'f077','f079','f081'],['West',262,"52'6\" × 45'",'f087','f085','f083'],['East',263,'Corner plot','f091','f089','f093'],['West',266,'Corner plot','f095','f097','f099'],['East',300,"45' × 60'",'f101','f103','f105']
+].map((p, i) => ({ i, facing: p[0], size: p[1], dims: p[2], g: p[3], f: p[4], s: p[5] }));
+const SIZES = [...new Set(PLANS.map(p => p.size))];
+class Component extends DCLogic {
+  state = { size: 170, planI: 0 };
+  renderVals() {
+    const st = this.state, forSize = PLANS.filter(p => p.size === st.size), plan = forSize.find(p => p.i === st.planI) || forSize[0];
+    const pick = p => { this.setState({ size: p.size, planI: p.i }); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    return {
+      sizes: SIZES.map(v => { const on = v === st.size; return { v, bg: on ? '#44463a' : 'transparent', fg: on ? '#fdfaf2' : '#2c2e25', pick: () => this.setState({ size: v, planI: PLANS.find(p => p.size === v).i }) }; }),
+      variants: forSize.map(p => { const on = p.i === plan.i; return { ...p, bg: on ? '#2c2e25' : 'transparent', fg: on ? '#fdfaf2' : '#2c2e25', bd: on ? '#2c2e25' : '#d9d2bf', pick: () => this.setState({ planI: p.i }) }; }),
+      plan,
+      floors: [['g', 'Ground floor'], ['f', 'First floor'], ['s', 'Second floor']].map(([k, label]) => ({ label, src: fp(plan[k]), alt: `West Winds ${plan.facing} facing ${plan.size} sq.yds villa — ${label} plan` })),
+      rows: PLANS.map(p => ({ ...p, pick: () => pick(p) })),
+      openEnq: () => window.dispatchEvent(new Event('ww-enquire')),
+      faqs: [
+        { q: 'What plot sizes are available at West Winds?', a: 'Plots of 170, 208, 224, 256, 262, 263, 266 and 300 sq.yds, with 17 layouts in East and West facings.' },
+        { q: 'What is the built-up area of West Winds villas?', a: 'Built-up areas range from 2,550 to 4,500 sq.ft across ground plus two floors.' },
+        { q: 'Can I customise the floor plan?', a: 'Yes, free floor-plan customisation is offered on every West Winds villa.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section aria-label="Explore West Winds" style="padding:clamp(70px,9vw,120px) clamp(20px,5vw,72px);background:#fdfaf2">
+  <div style="max-width:1440px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid #2c2e25">
+      <h2 style="margin:0;font-family:'WWNum','Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,3.4vw,52px);color:#2c2e25">Explore <em style="font-style:italic">West Winds</em></h2>
+      <a href="West%20Winds%20v2.dc.html" style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2c2e25;white-space:nowrap">Back to home →</a>
+    </div>
+    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(10px,1.2vw,18px)">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="4">
+        <a data-rv="1" href="{{ l.href }}" style="display:flex;flex-direction:column;gap:14px;color:#2c2e25">
+          <span style="display:block;aspect-ratio:4/3;overflow:hidden;background:#f2ede1"><img src="{{ l.img }}" alt="{{ l.t }} — West Winds" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.06)"></span>
+          <span style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+            <span style="font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(24px,2.2vw,32px);line-height:1.1">{{ l.t }}</span>
+            <span style="font-size:18px">→</span>
+          </span>
+          <span style="font-size:14px;line-height:1.55;color:#55574a">{{ l.d }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;amenities&quot;,&quot;plans&quot;,&quot;price&quot;,&quot;location&quot;,&quot;faq&quot;],&quot;default&quot;:&quot;amenities&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const all = [
+      { k: 'amenities', href: 'Amenities.dc.html', t: 'Amenities', d: 'Clubhouse, pool, courts and parks — 25+ amenities.', img: 'img/w/pool.jpg' },
+      { k: 'plans', href: 'Floor-Plans.dc.html', t: 'Floor plans', d: '17 layouts, 170 – 300 sq.yds, East & West facing.', img: 'img/street-2.jpg' },
+      { k: 'price', href: 'Price.dc.html', t: 'Price', d: 'Villas from ₹2.10 Cr, charges and ROI explained.', img: 'img/w/gateway.jpg' },
+      { k: 'location', href: 'Location.dc.html', t: 'Location', d: 'Bhanur — 10 min to Kollur ORR, 25 min to Gachibowli.', img: 'img/street-3.jpg' },
+      { k: 'faq', href: 'FAQ.dc.html', t: 'FAQs', d: 'Approvals, possession, loans and more.', img: 'img/w/villa-facade.jpg' }
+    ];
+    return { links: all.filter(l => l.k !== this.props.current).slice(0, 4) };
+  }
+}
+</script>
+</body>
+</html>

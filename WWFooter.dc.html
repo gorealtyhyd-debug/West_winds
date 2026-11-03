@@ -1,0 +1,49 @@
+<helmet><style>@font-face{font-family:'WWNum';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2) format('woff2');unicode-range:U+0030-0039,U+20B9,U+0025}
+</style></helmet>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section style="padding:clamp(70px,8vw,110px) clamp(20px,5vw,72px);background:#44463a;color:#fdfaf2">
+  <div style="max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+      <div style="font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#dcd5bf">West Winds · Phase 1</div>
+      <div style="font-family:'WWNum','Cormorant Garamond',serif;font-size:clamp(38px,4.6vw,70px);line-height:1">Villas starting at <em style="font-style:italic">₹2.10 Cr.</em></div>
+      <div style="font-size:15px;color:rgba(253,250,242,.8)">3 &amp; 4 BHK + Media triplex villas · HMDA &amp; RERA approved · Possession December 2026</div>
+    </div>
+    <button onClick="{{ openEnq }}" style="height:58px;padding:0 36px;border-radius:999px;border:none;background:#fdfaf2;color:#2c2e25;font-size:13px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;cursor:pointer" style-hover="background:#dcd5bf">Enquire now</button>
+  </div>
+</section>
+<footer style="background:#2c2e25;color:rgba(253,250,242,.72);padding:60px clamp(20px,5vw,72px) 40px">
+  <div style="max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap">
+      <img src="img/logo-westwinds.png" alt="West Winds" style="width:220px">
+      <div style="display:flex;align-items:center;gap:14px"><span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap">A project by</span><img src="img/logo-creativehomes.png" alt="Creative Homes" style="width:56px"></div>
+    </div>
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:12px 28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase">
+      <a href="West%20Winds%20v2.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">Home</a>
+      <a href="Amenities.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">Amenities</a>
+      <a href="Floor-Plans.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">Floor plans</a>
+      <a href="Price.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">Price</a>
+      <a href="Location.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">Location</a>
+      <a href="FAQ.dc.html" style="color:rgba(253,250,242,.85)" style-hover="color:#dcd5bf">FAQs</a>
+    </nav>
+    <div style="border-top:1px solid rgba(253,250,242,.12);padding-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;line-height:1.6">
+      <div>West Winds by Creative Homes · Sy. No. 353, Bhanur – Shankarpally, Hyderabad, Telangana · HMDA &amp; RERA approved</div>
+      <div style="max-width:620px">Disclaimer: This website is meant only for information purposes. It should not be considered/ claimed as an official site. This website belongs to authorized channel partner.</div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { openEnq: () => window.dispatchEvent(new Event('ww-enquire')) }; }
+}
+</script>
+</body>
+</html>
